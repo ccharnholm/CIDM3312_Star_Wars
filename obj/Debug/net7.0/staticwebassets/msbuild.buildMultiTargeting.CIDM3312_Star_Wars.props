@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CIDM3312_Star_Wars.props" />
+</Project>
