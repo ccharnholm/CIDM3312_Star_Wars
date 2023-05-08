@@ -6,8 +6,10 @@ namespace CIDM3312_Star_Wars.Models
     {
         public int WeaponID {get; set;} // Primary Key
         [Required]
+        [Display(Name = "Weapon")]
         public string WeaponName {get; set;} = string.Empty;
-        public string WeaponDamage {get; set;} = string.Empty;
+        [Display(Name = "Damage (Back-Front)")]
+        public int WeaponDamage {get; set;}
         public List<CharacterWeapon> CharacterWeapons {get; set;} = default!; // Navigation Property
     }
 
