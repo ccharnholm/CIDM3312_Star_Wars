@@ -8,8 +8,10 @@ namespace CIDM3312_Star_Wars.Models
         [Required]
         [Display(Name = "Weapon")]
         public string WeaponName {get; set;} = string.Empty;
+        
+        // WeaponDamage is a string because the value is ??-?? so string allows this be inputted easier
         [Display(Name = "Damage (Back-Front)")]
-        public int WeaponDamage {get; set;}
+        public string WeaponDamage {get; set;} = string.Empty;
         public List<CharacterWeapon> CharacterWeapons {get; set;} = default!; // Navigation Property
     }
 

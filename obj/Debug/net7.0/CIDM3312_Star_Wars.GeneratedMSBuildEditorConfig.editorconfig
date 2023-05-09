@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\ADMIN\Desktop\CIDM 3312\CIDM3312_Star_Wars
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/ADMIN/Desktop/CIDM 3312/CIDM3312_Star_Wars/Pages/Characters/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhcmFjdGVyc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ADMIN/Desktop/CIDM 3312/CIDM3312_Star_Wars/Pages/Characters/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhcmFjdGVyc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ADMIN/Desktop/CIDM 3312/CIDM3312_Star_Wars/Pages/Characters/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhcmFjdGVyc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ADMIN/Desktop/CIDM 3312/CIDM3312_Star_Wars/Pages/Characters/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhcmFjdGVyc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ADMIN/Desktop/CIDM 3312/CIDM3312_Star_Wars/Pages/Characters/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhcmFjdGVyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ADMIN/Desktop/CIDM 3312/CIDM3312_Star_Wars/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

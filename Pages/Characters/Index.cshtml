@@ -1,0 +1,107 @@
+@page
+@model CIDM3312_Star_Wars.Pages.Characters.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+@* Search form to allow user to specifically search database for character *@
+<form>
+    <p>
+        Character name: <input type="text" name="SearchString">
+        <input type="submit" value="Filter"/>
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @* Creating sort based on name of characters that keeps the page number the user was on *@
+                @{
+                    var firstSort = "first_asc";
+                    if (Model.CurrentSort == "first_asc")
+                    {
+                        firstSort = "first_desc";
+                    }
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@firstSort" asp-route-PageNum="@Model.PageNum">@Html.DisplayNameFor(model => model.Character[0].Name)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Character[0].Health)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Character[0].BattlePoints)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Character[0].Class)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Character[0].Subclass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Character[0].Allegiance)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Character) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Health)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BattlePoints)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subclass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Allegiance)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CharacterID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CharacterID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CharacterID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<hr />
+@{
+    // IF we are on page 1 the previous button will be disabled and if we are on the last page the next page will be disabled
+    // Creating tow variables to determine whether or not to disable either button
+    var prevDisabled = "";
+    var nextDisabled = "";
+    int record = Model.Character.Count;
+    if (Model.PageNum <= 1)
+    {
+        prevDisabled = "disabled";
+    }
+    if (Model.PageNum >= record - 1)
+    {
+        nextDisabled = "disabled";
+    }
+}
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        @*  Page navigation that allows user to go to the next page or previous, if able, while keeping the sort that is selected  *@
+        <li class="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum - 1)" asp-route-CurrentSort="@Model.CurrentSort">Previous</a></li>
+        <li class="page-item @nextDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum + 1)" asp-route-CurrentSort="@Model.CurrentSort">Next</a></li>
+    </ul>
+</nav>
+

@@ -10,6 +10,7 @@ namespace CIDM3312_Star_Wars.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Creating the keys for table that connects many-to-many relationship
             modelBuilder.Entity<CharacterWeapon>().HasKey(c => new {c.WeaponID, c.CharacterID});
         }
 
